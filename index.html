@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
 
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(to bottom,#ffb6c1,#ffc0cb,#ffd1dc);
+    overflow-x:hidden;
+    text-align:center;
+    color:white;
+}
+
+.hero{
+    padding:80px 20px;
+}
+
+h1{
+    font-size:3rem;
+    text-shadow:2px 2px 10px rgba(0,0,0,0.3);
+}
+
+p{
+    font-size:1.2rem;
+    max-width:700px;
+    margin:auto;
+}
+
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:40px 20px;
+}
+
+.gallery img{
+    width:250px;
+    height:320px;
+    object-fit:cover;
+    border-radius:20px;
+    border:4px solid white;
+    box-shadow:0 0 15px rgba(255,255,255,0.6);
+}
+
+.heart{
+    position:fixed;
+    top:-20px;
+    color:#ff1493;
+    animation:fall linear infinite;
+    pointer-events:none;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-10vh);
+    }
+    to{
+        transform:translateY(110vh);
+    }
+}
+
+.footer{
+    padding:40px;
+    font-size:1.2rem;
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>💗 For Astha 💗</h1>
+    <p>
+        Every day with you feels special.
+        Your smile makes my day brighter,
+        and this little website is made with lots of love,
+        just for you. 💕
+    </p>
+</div>
+
+<div class="gallery">
+    <img src="photo1.jpg" alt="Photo 1">
+    <img src="photo2.jpg" alt="Photo 2">
+    <img src="photo3.jpg" alt="Photo 3">
+</div>
+
+<div class="footer">
+    💋 Forever & Always 💋
+</div>
+
+<script>
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML=Math.random()>0.5 ? "💖" : "💋";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(20+Math.random()*30)+"px";
+    heart.style.animationDuration=(4+Math.random()*6)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },10000);
+}
+
+setInterval(createHeart,200);
+</script>
+
+</body>
+</html>
